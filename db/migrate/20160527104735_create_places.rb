@@ -3,7 +3,7 @@ class CreatePlaces < ActiveRecord::Migration
     create_table :places do |t|
 
     	t.string :name
-    	t.text :descripition
+    	t.text :description
     	t.string :address
 
       t.timestamps
