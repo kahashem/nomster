@@ -33,3 +33,10 @@ body {
   font-family: 'anagramregular', sans-serif;
   font-size: 45px;
 }
+.pagination {
+  .previous_page { color:black; font-size: 20px; }
+  .previous_page.disabled { color:black; font-size:20px; }
+  .current { color: gray; font-size:20px; }
+  .next_page {  color: black; font-size: 20px; }
+  .next_page.disabled { color: black; font-size:20px; }
+}
