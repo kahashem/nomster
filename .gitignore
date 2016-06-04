@@ -17,3 +17,6 @@
 
 # Vim Swap files
 *~
+
+# Ignore application configuration
+/config/application.yml
