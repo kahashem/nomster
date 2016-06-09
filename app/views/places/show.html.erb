@@ -9,9 +9,12 @@
   
 </head>
   <body>
-    <div id="map"></div>
+    
 
     <% if @place.latitude.present? && @place.longitude.present? %>
+
+    <div id="map"></div>
+
     <script>
 
 function initMap() {
@@ -36,6 +39,34 @@ function initMap() {
   <div id="map"></div>
 <% end %>
 <br />
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add an Image</h4>
+      </div>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |q| %>
+      <div class="modal-body">
+        <%= q.input :caption %>
+        <%= q.input :picture %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <%= q.submit "Upload Image", class: 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="pull-left">
+<!-- Button trigger modal -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+  Add an Image
+</button>
+</div>
+
+
 	<div class="pull-right">
 		<% if current_user && current_user == @place.user %>
 		<%= link_to 'Edit', edit_place_path(@place), class: 'btn btn-primary' %>
@@ -44,6 +75,19 @@ function initMap() {
 		
 	<% end %>
 		</div>
+<br /><br /><br /><br />
+		<h1>Photos</h1>
+
+<% @place.photos.each do |photo| %>
+  <div>
+    <blockquote>
+      <b><%= image_tag photo.picture %></b> 
+      <%= photo.caption %>
+      <small><%= photo.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
+
 </div>
 <div class="clear"></div>
 
@@ -83,6 +127,16 @@ function initMap() {
 
 <div class="clear"></div>
 
+<!-- Modal -->
+
+
+
+
+
+
+
+<div class="clear"></div>
+
 <% @place.comments.each do |comment| %>
 	<div class="col-xs-12 col-sm-6">
 		<blockquote>
@@ -94,3 +148,6 @@ function initMap() {
 		</blockquote>
 	</div>
 <% end %>
+
+<div class="clear"></div>
+
