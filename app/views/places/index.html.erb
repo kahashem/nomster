@@ -1,3 +1,57 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag 'restaraunt.jpg' %>
+      <div class="carousel-caption">
+        Find the best Restaurants!
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'Burger.jpg' %>
+      <div class="carousel-caption">
+        ..and the best Burgers!!
+      </div>
+    </div>
+     <div class="item">
+      <%= image_tag 'Chinese.jpg' %>
+      <div class="carousel-caption">
+        Or maybe you're looking for Chinese?
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'Pizza.jpg' %>
+      <div class="carousel-caption">
+        Tell us about your experience at your local Pizza parlor!
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag 'Sushi.jpg' %>
+      <div class="carousel-caption">
+        At Foody there's something for everyone!
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
 
 <%= will_paginate @places %>
 
